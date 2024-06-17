@@ -1,55 +1,19 @@
-package com.opliska.f1calendarapplication
+package com.opliska.f1calendarapplication.presentation
 
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.*
-import androidx.compose.material3.*
+import androidx.compose.material.icons.filled.AccountCircle
+import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.List
+import androidx.compose.material.icons.filled.Notifications
+import androidx.compose.material.icons.filled.Search
+import androidx.compose.material3.Icon
+import androidx.compose.material3.NavigationBar
+import androidx.compose.material3.NavigationBarItem
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
-import androidx.navigation.compose.*
-import com.opliska.f1calendarapplication.ui.theme.F1CalendarApplicationTheme
-
-class MainActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            F1CalendarApplicationTheme {
-                MainScreen()
-            }
-        }
-    }
-}
-
-@Composable
-fun MainScreen() {
-    val navController = rememberNavController()
-
-    Scaffold(
-        bottomBar = { BottomNavigationBar(navController) },
-        modifier = Modifier.fillMaxSize()
-    ) { innerPadding ->
-        NavHost(
-            navController = navController,
-            startDestination = "race_list",
-            modifier = Modifier.padding(innerPadding)
-        ) {
-            composable("race_list") { RaceListScreen() }
-            composable("option1") { Option1Screen() }
-            composable("option2") { Option2Screen() }
-            composable("option3") { Option3Screen() }
-            composable("option4") { Option4Screen() }
-        }
-    }
-}
+import androidx.navigation.compose.currentBackStackEntryAsState
 
 @Composable
 fun BottomNavigationBar(navController: NavHostController) {
@@ -108,11 +72,3 @@ fun Option4Screen() {
 }
 
 data class BottomNavItem(val label: String, val icon: ImageVector, val route: String)
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    F1CalendarApplicationTheme {
-        MainScreen()
-    }
-}
