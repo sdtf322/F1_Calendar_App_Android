@@ -61,6 +61,7 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.material3)
     implementation(libs.androidx.navigation.compose)
+    api(libs.kotlinx.immutable)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
