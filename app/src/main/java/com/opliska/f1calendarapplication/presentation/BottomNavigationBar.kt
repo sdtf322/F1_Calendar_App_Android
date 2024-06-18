@@ -1,9 +1,9 @@
 package com.opliska.f1calendarapplication.presentation
 
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.List
 import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.List
 import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Icon
@@ -14,11 +14,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
+import com.opliska.f1calendarapplication.presentation.race_list.RaceListScreen
 
 @Composable
 fun BottomNavigationBar(navController: NavHostController) {
     val items = listOf(
-        BottomNavItem("Race List", Icons.Default.List, "race_list"),
+        BottomNavItem("Race List", Icons.AutoMirrored.Filled.List, "race_list"),
         BottomNavItem("Option 1", Icons.Default.Home, "option1"),
         BottomNavItem("Option 2", Icons.Default.Search, "option2"),
         BottomNavItem("Option 3", Icons.Default.Notifications, "option3"),
@@ -48,7 +49,7 @@ fun BottomNavigationBar(navController: NavHostController) {
 
 @Composable
 fun RaceListScreen() {
-    Text(text = "Race List Screen")
+    RaceListScreen()
 }
 
 @Composable
