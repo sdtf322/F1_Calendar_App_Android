@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "638173567913",
+    "firebase_url": "https://f1-calendar-app-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "f1-calendar-app",
+    "storage_bucket": "f1-calendar-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:638173567913:android:f527ab30d3295ee49ac2b8",
+        "android_client_info": {
+          "package_name": "com.opliska.f1calendarapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "638173567913-h6c294o9oq59is5k8q4vljn69389npcr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmCHV3GLqF02IeOi3lr6kPWY090gLB_h4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "638173567913-h6c294o9oq59is5k8q4vljn69389npcr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
