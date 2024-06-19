@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.dagger.hilt.android) apply false
     alias(libs.plugins.kapt)
+    alias(libs.plugins.androidx.room)
 }
 
 android {
@@ -51,6 +52,10 @@ android {
     }
 }
 
+room {
+    schemaDirectory("${rootProject.projectDir}/schemas")
+}
+
 dependencies {
 
     implementation(libs.androidx.core.ktx)
@@ -64,6 +69,8 @@ dependencies {
     implementation(libs.material3)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.dagger.hilt.android)
+
+    implementation(libs.androidx.room.ktx)
 
     kapt(libs.dagger.hilt.compiler)
 
