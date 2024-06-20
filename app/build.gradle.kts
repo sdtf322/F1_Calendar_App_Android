@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
@@ -21,6 +23,13 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+
+        val properties = Properties()
+        properties.load(project.rootProject.file("local.properties").inputStream())
+
+        buildConfigField("String", "FIREBASE_API_KEY", properties.getProperty("FIREBASE_API_KEY"))
+        buildConfigField("String", "FIREBASE_CLIENT_ID", properties.getProperty("FIREBASE_CLIENT_ID"))
+        buildConfigField("String", "FIREBASE_PROJECT_NUMBER", properties.getProperty("FIREBASE_PROJECT_NUMBER"))
     }
 
     buildTypes {
@@ -57,7 +66,6 @@ room {
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -69,7 +77,6 @@ dependencies {
     implementation(libs.material3)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.dagger.hilt.android)
-
     implementation(libs.androidx.room.ktx)
 
     kapt(libs.dagger.hilt.compiler)
