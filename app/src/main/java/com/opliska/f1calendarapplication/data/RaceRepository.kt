@@ -1,6 +1,31 @@
 package com.opliska.f1calendarapplication.data
 
+import com.opliska.f1calendarapplication.data.model.Race
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flowOf
+
 class RaceRepository {
+
+    fun getAll(): Flow<RequestResult<List<Race>>> {
+        val mockData = listOf(
+            Race(
+                id = 1,
+                title = "Canadian Grand Prix",
+                description = "25-27 MARCH",
+                imageUrl = null),
+            Race(
+                id = 2,
+                title = "Australian Grand Prix",
+                description = "14-16 APRIL",
+                imageUrl = null),
+            Race(
+                id = 3,
+                title = "Estonian Grand Prix",
+                description = "16-18 JUNE",
+                imageUrl = null),
+        )
+        return flowOf(RequestResult.Success(mockData))
+    }
 
     //Todo implement get all function for race repository
 //    public fun getAll(
