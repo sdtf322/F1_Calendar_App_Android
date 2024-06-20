@@ -6,6 +6,7 @@ plugins {
     alias(libs.plugins.dagger.hilt.android) apply false
     alias(libs.plugins.kapt)
     alias(libs.plugins.androidx.room)
+    alias(libs.plugins.google.gms.google.services)
 }
 
 android {
@@ -78,6 +79,7 @@ dependencies {
     implementation(libs.androidx.navigation.compose)
     implementation(libs.dagger.hilt.android)
     implementation(libs.androidx.room.ktx)
+    implementation(libs.firebase.database)
 
     kapt(libs.dagger.hilt.compiler)
 
