@@ -8,6 +8,7 @@ import com.opliska.f1calendarapplication.BuildConfig
 class App : Application() {
 
     //Todo need a succesful build for generating a BuildConfig
+
     override fun onCreate() {
         super.onCreate()
 

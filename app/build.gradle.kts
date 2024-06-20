@@ -7,6 +7,7 @@ plugins {
     alias(libs.plugins.kapt)
     alias(libs.plugins.androidx.room)
     alias(libs.plugins.google.gms.google.services)
+    alias(libs.plugins.compose.compiler)
 }
 
 android {
@@ -29,8 +30,8 @@ android {
         properties.load(project.rootProject.file("local.properties").inputStream())
 
         buildConfigField("String", "FIREBASE_API_KEY", properties.getProperty("FIREBASE_API_KEY"))
-        buildConfigField("String", "FIREBASE_CLIENT_ID", properties.getProperty("FIREBASE_CLIENT_ID"))
-        buildConfigField("String", "FIREBASE_PROJECT_NUMBER", properties.getProperty("FIREBASE_PROJECT_NUMBER"))
+        buildConfigField("String", "FIREBASE_APP_ID", properties.getProperty("FIREBASE_APP_ID"))
+        buildConfigField("String", "FIREBASE_PROJECT_ID", properties.getProperty("FIREBASE_PROJECT_ID"))
     }
 
     buildTypes {
@@ -51,6 +52,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
