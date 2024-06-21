@@ -17,9 +17,12 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.opliska.f1calendarapplication.State
 import com.opliska.f1calendarapplication.presentation.race_list.component.RaceList
 import com.opliska.f1calendarapplication.ui.theme.F1Theme
+import androidx.hilt.navigation.compose.hiltViewModel
+
 
 @Composable
 fun RaceListScreen(modifier: Modifier = Modifier) {
+    val viewModel: RaceListViewModel = hiltViewModel()
     RaceListScreen(viewModel = viewModel(), modifier = modifier)
 }
 

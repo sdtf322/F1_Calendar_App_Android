@@ -3,7 +3,7 @@ import java.util.Properties
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-    alias(libs.plugins.dagger.hilt.android) apply false
+    alias(libs.plugins.dagger.hilt.android)
     alias(libs.plugins.kapt)
     alias(libs.plugins.androidx.room)
     alias(libs.plugins.google.gms.google.services)
@@ -82,6 +82,8 @@ dependencies {
     implementation(libs.dagger.hilt.android)
     implementation(libs.androidx.room.ktx)
     implementation(libs.firebase.database)
+
+    implementation(libs.hilt.navigation.compose)
 
     kapt(libs.dagger.hilt.compiler)
 
