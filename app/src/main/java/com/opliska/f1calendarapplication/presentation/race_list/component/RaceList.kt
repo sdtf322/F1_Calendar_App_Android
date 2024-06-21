@@ -49,23 +49,7 @@ internal fun Race(
     modifier: Modifier = Modifier,
 ) {
     Row(modifier.padding(bottom = 4.dp)) {
-        //Todo edit Race component
-//        race.imageUrl?.let { imageUrl ->
-//            var isImageVisible by remember { mutableStateOf(true) }
-//            if (isImageVisible) {
-//                AsyncImage(
-//                    model = imageUrl,
-//                    onState = { state ->
-//                        if (state is AsyncImagePainter.State.Error) {
-//                            isImageVisible = false
-//                        }
-//                    },
-//                    contentDescription = stringResource(R.string.content_desc_item_article_image),
-//                    contentScale = ContentScale.Crop,
-//                    modifier = Modifier.size(150.dp)
-//                )
-//            }
-//        }
+        //Todo create UI according to Design (currently is setup for mock up / testing)
         Spacer(modifier = Modifier.size(4.dp))
         Column(modifier = Modifier.padding(8.dp)) {
             Text(

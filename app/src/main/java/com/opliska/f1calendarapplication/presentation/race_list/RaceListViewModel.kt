@@ -13,7 +13,6 @@ import kotlinx.coroutines.flow.stateIn
 import javax.inject.Inject
 import javax.inject.Provider
 
-//Todo update use case
 @HiltViewModel
 class RaceListViewModel @Inject constructor(
     getRaceListUseCase: Provider<GetRaceListUseCase>
