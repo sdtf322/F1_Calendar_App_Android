@@ -53,13 +53,13 @@ internal fun Race(
         Spacer(modifier = Modifier.size(4.dp))
         Column(modifier = Modifier.padding(8.dp)) {
             Text(
-                text = race.title,
+                text = race.title ?: "",
                 style = F1Theme.typography.headlineMedium,
                 maxLines = 1
             )
             Spacer(modifier = Modifier.size(4.dp))
             Text(
-                text = race.description,
+                text = race.description ?: "",
                 style = F1Theme.typography.bodyMedium,
                 maxLines = 3
             )
@@ -82,19 +82,19 @@ private class ArticlePreviewProvider : PreviewParameterProvider<RaceUI> {
     override val values =
         sequenceOf(
             RaceUI(
-                id = 1,
+                id = "1",
                 "Title 1",
                 "Description 1",
                 imageUrl = null
             ),
             RaceUI(
-                id = 2,
+                id = "2",
                 "Title 2",
                 "Description 2",
                 imageUrl = null
             ),
             RaceUI(
-                id = 3,
+                id = "3",
                 "Title 3",
                 "Description 3",
                 imageUrl = null

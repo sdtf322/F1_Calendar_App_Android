@@ -10,20 +10,17 @@ class RaceRepository @Inject constructor() {
     fun getAll(): Flow<RequestResult<List<Race>>> {
         val mockData = listOf(
             Race(
-                id = 1,
-                title = "Canadian Grand Prix",
-                description = "25-27 MARCH",
-                imageUrl = null),
+                round = "1",
+                raceName = "Canadian Grand Prix",
+                date = "25-27 MARCH"),
             Race(
-                id = 2,
-                title = "Australian Grand Prix",
-                description = "14-16 APRIL",
-                imageUrl = null),
+                round = "2",
+                raceName = "Australian Grand Prix",
+                date = "14-16 APRIL"),
             Race(
-                id = 3,
-                title = "Estonian Grand Prix",
-                description = "16-18 JUNE",
-                imageUrl = null),
+                round = "3",
+                raceName = "Estonian Grand Prix",
+                date = "16-18 JUNE"),
         )
         return flowOf(RequestResult.Success(mockData))
     }

@@ -15,9 +15,8 @@ internal fun RequestResult<List<RaceUI>>.toState(): State {
 
 internal fun Race.toRaceUI(): RaceUI {
     return RaceUI(
-        id = id,
-        title = title,
-        description = description,
-        imageUrl = imageUrl,
+        id = round,
+        title = raceName,
+        description = date
     )
 }
