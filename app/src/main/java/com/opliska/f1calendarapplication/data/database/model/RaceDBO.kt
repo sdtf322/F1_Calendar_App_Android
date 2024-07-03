@@ -6,8 +6,8 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import java.util.Date
 
-@Entity(tableName = "articles")
-data class ArticleDBO(
+@Entity(tableName = "races")
+data class RaceDBO(
     @Embedded(prefix = "source") val source: Source?,
     @ColumnInfo("author") val author: String?,
     @ColumnInfo("title") val title: String?,
