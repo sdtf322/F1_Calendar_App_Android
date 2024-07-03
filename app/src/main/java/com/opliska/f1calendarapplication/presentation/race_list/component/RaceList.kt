@@ -30,9 +30,11 @@ internal fun RaceList(
 @Preview
 @Composable
 internal fun RaceList(
-    @PreviewParameter(ArticlesPreviewProvider::class, limit = 1) races: List<RaceUI>,
+    @PreviewParameter(RaceListPreviewProvider::class, limit = 1) races: List<RaceUI>,
     modifier: Modifier = Modifier,
 ) {
+
+
     LazyColumn(modifier) {
         items(races) { races ->
             key(races.id) {
@@ -45,7 +47,7 @@ internal fun RaceList(
 @Preview
 @Composable
 internal fun Race(
-    @PreviewParameter(ArticlePreviewProvider::class, limit = 1) race: RaceUI,
+    @PreviewParameter(RacePreviewProvider::class, limit = 1) race: RaceUI,
     modifier: Modifier = Modifier,
 ) {
     Row(modifier.padding(bottom = 4.dp)) {
@@ -67,8 +69,8 @@ internal fun Race(
     }
 }
 
-private class ArticlesPreviewProvider : PreviewParameterProvider<List<RaceUI>> {
-    private val articleProvider = ArticlePreviewProvider()
+private class RaceListPreviewProvider : PreviewParameterProvider<List<RaceUI>> {
+    private val articleProvider = RacePreviewProvider()
 
     override val values =
         sequenceOf(
@@ -78,7 +80,7 @@ private class ArticlesPreviewProvider : PreviewParameterProvider<List<RaceUI>> {
 }
 
 @Suppress("MagicNumber")
-private class ArticlePreviewProvider : PreviewParameterProvider<RaceUI> {
+private class RacePreviewProvider : PreviewParameterProvider<RaceUI> {
     override val values =
         sequenceOf(
             RaceUI(
