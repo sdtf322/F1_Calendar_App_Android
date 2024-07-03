@@ -7,14 +7,17 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.key
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.opliska.f1calendarapplication.State
 import com.opliska.f1calendarapplication.presentation.RaceUI
 import com.opliska.f1calendarapplication.ui.theme.F1Theme
@@ -24,7 +27,22 @@ internal fun RaceList(
     raceState: State.Success,
     modifier: Modifier = Modifier,
 ) {
-    RaceList(races = raceState.races, modifier)
+    Column(modifier = modifier) {
+        Text(
+            text = "2024",
+            fontSize = 24.sp,
+            textAlign = TextAlign.Start,
+            modifier = Modifier
+                .padding(16.dp)
+        )
+
+        HorizontalDivider(
+            modifier = Modifier
+                .padding(vertical = 16.dp)
+        )
+
+        RaceList(races = raceState.races, modifier)
+    }
 }
 
 @Preview
@@ -33,8 +51,6 @@ internal fun RaceList(
     @PreviewParameter(RaceListPreviewProvider::class, limit = 1) races: List<RaceUI>,
     modifier: Modifier = Modifier,
 ) {
-
-
     LazyColumn(modifier) {
         items(races) { races ->
             key(races.id) {
