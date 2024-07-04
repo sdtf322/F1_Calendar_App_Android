@@ -1,6 +1,7 @@
 package com.opliska.f1calendarapplication.data.model
 
 data class Race(
+    val cacheId: Long = ID_NONE,
     val circuit: Circuit? = null,
     val firstPractice: FirstPractice? = null,
     val lapRecord: LapRecord? = null,
@@ -16,4 +17,8 @@ data class Race(
     val trackLength: Int? = null,
     val url: String? = null,
     val yearStarted: String? = null
-)
+) {
+    companion object {
+        const val ID_NONE: Long = 0L
+    }
+}
