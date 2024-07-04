@@ -15,8 +15,8 @@ import javax.inject.Inject
 
 class RaceRepository @Inject constructor() {
 
-    private val database = Firebase.database
-    private val databaseReference: DatabaseReference = database.getReference("races2024")
+    private val firebaseDatabase = Firebase.database
+    private val firebaseDatabaseReference: DatabaseReference = firebaseDatabase.getReference("races2024")
 
     fun getAll(): Flow<RequestResult<List<Race>>> = callbackFlow {
 
@@ -30,8 +30,8 @@ class RaceRepository @Inject constructor() {
                 trySend(RequestResult.Error(error = Exception(error.message))).isSuccess
             }
         }
-        databaseReference.addValueEventListener(racesListener)
-        awaitClose { databaseReference.removeEventListener(racesListener) }
+        firebaseDatabaseReference.addValueEventListener(racesListener)
+        awaitClose { firebaseDatabaseReference.removeEventListener(racesListener) }
     }.catch { e ->
         emit(RequestResult.Error(error = e))
     }
