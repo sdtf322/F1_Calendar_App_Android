@@ -88,8 +88,6 @@ class RaceRepository @Inject constructor(
         return merge(apiRequest, start)
     }
 
-    //Todo Add remaining functions necessary for room and saving it to database
-
     private suspend fun saveRacesToCache(data: List<Race>) {
         val dbos = data.map { race -> race.toRaceDBO() }
         database.racesDao.insert(dbos)
