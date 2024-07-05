@@ -4,7 +4,6 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import androidx.room.TypeConverters
 import com.opliska.f1calendarapplication.data.database.dao.RaceDao
 import com.opliska.f1calendarapplication.data.database.model.RaceDBO
 
