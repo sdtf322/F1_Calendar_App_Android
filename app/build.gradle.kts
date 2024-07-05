@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.dagger.hilt.android)
     alias(libs.plugins.kapt)
+    alias(libs.plugins.ksp)
     alias(libs.plugins.androidx.room)
     alias(libs.plugins.google.gms.google.services)
     alias(libs.plugins.compose.compiler)
@@ -86,6 +87,8 @@ dependencies {
     implementation(libs.hilt.navigation.compose)
 
     kapt(libs.dagger.hilt.compiler)
+
+    ksp(libs.androidx.room.compiler)
 
     api(libs.kotlinx.immutable)
     testImplementation(libs.junit)
