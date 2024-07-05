@@ -4,7 +4,6 @@ import androidx.room.ColumnInfo
 import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.opliska.f1calendarapplication.data.model.Location
 
 @Entity(tableName = "races")
 data class RaceDBO(
@@ -27,10 +26,17 @@ data class RaceDBO(
 )
 
 data class CircuitDBO(
-    val location: Location? = null,
+    @Embedded(prefix = "location") val location: LocationDBO? = null,
     val circuitId: String? = null,
     val circuitName: String? = null,
     val url: String? = null
+)
+
+data class LocationDBO(
+    val country: String? = null,
+    val lat: String? = null,
+    val locality: String? = null,
+    val long: String? = null
 )
 
 data class LapRecordDBO(

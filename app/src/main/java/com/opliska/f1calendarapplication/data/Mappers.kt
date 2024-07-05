@@ -4,6 +4,7 @@ import com.opliska.f1calendarapplication.State
 import com.opliska.f1calendarapplication.data.database.model.CircuitDBO
 import com.opliska.f1calendarapplication.data.database.model.FirstPracticeDBO
 import com.opliska.f1calendarapplication.data.database.model.LapRecordDBO
+import com.opliska.f1calendarapplication.data.database.model.LocationDBO
 import com.opliska.f1calendarapplication.data.database.model.QualifyingDBO
 import com.opliska.f1calendarapplication.data.database.model.RaceDBO
 import com.opliska.f1calendarapplication.data.database.model.SecondPracticeDBO
@@ -12,6 +13,7 @@ import com.opliska.f1calendarapplication.data.database.model.ThirdPracticeDBO
 import com.opliska.f1calendarapplication.data.model.Circuit
 import com.opliska.f1calendarapplication.data.model.FirstPractice
 import com.opliska.f1calendarapplication.data.model.LapRecord
+import com.opliska.f1calendarapplication.data.model.Location
 import com.opliska.f1calendarapplication.data.model.Qualifying
 import com.opliska.f1calendarapplication.data.model.Race
 import com.opliska.f1calendarapplication.data.model.SecondPractice
@@ -53,10 +55,19 @@ fun RaceDBO.toRace(): Race {
 
 fun CircuitDBO.toCircuit(): Circuit {
     return Circuit(
-        location = this.location,
+        location = this.location?.toLocation(),
         circuitId = this.circuitId,
         circuitName = this.circuitName,
         url = this.url
+    )
+}
+
+fun LocationDBO.toLocation(): Location {
+    return Location(
+        country = this.country,
+        lat = this.lat,
+        locality = this.locality,
+        long = this.long
     )
 }
 
@@ -137,10 +148,19 @@ fun Race.toRaceDBO(): RaceDBO {
 
 fun Circuit.toCircuitDBO(): CircuitDBO {
     return CircuitDBO(
-        location = this.location,
+        location = this.location?.toLocationDBO(),
         circuitId = this.circuitId,
         circuitName = this.circuitName,
         url = this.url
+    )
+}
+
+fun Location.toLocationDBO(): LocationDBO {
+    return LocationDBO(
+        country = this.country,
+        lat = this.lat,
+        locality = this.locality,
+        long = this.long
     )
 }
 
