@@ -25,11 +25,11 @@ val SplineSans = FontFamily(
 val Title1 = TextStyle(
     fontFamily = SplineSans,
     fontWeight = FontWeight.Bold,
-    fontSize = 24.sp
+    fontSize = 18.sp
 )
 
 val CustomBody1 = TextStyle(
     fontFamily = SplineSans,
     fontWeight = FontWeight.Normal,
-    fontSize = 16.sp
+    fontSize = 14.sp
 )

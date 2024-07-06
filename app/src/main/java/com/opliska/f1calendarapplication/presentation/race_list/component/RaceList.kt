@@ -1,5 +1,7 @@
 package com.opliska.f1calendarapplication.presentation.race_list.component
 
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -7,10 +9,12 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.key
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
@@ -60,16 +64,23 @@ internal fun Race(
     @PreviewParameter(RacePreviewProvider::class, limit = 1) race: RaceUI,
     modifier: Modifier = Modifier,
 ) {
-    Row(modifier.padding(bottom = 4.dp)) {
-        //Todo create UI according to Design (currently is setup for mock up / testing)
-        Spacer(modifier = Modifier.size(4.dp))
-        Column(modifier = Modifier.padding(8.dp)) {
+    Row(modifier.padding(horizontal = 16.dp, vertical = 12.dp)) {
+        //Later there will be a image source instead of Box
+        Box(
+            modifier = Modifier
+                .size(60.dp)
+                .background(
+                    color = Color(0xFFFFA500),
+                    shape = RoundedCornerShape(4.dp)
+                )
+        )
+        Column(modifier = Modifier.padding(start = 16.dp, top = 2.dp)) {
             Text(
                 text = race.title ?: "",
                 style = F1Theme.typography.title1,
                 maxLines = 1
             )
-            Spacer(modifier = Modifier.size(4.dp))
+            Spacer(modifier = Modifier.padding(top = 6.dp))
             Text(
                 text = race.description ?: "",
                 style = F1Theme.typography.customBody1,
