@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.key
@@ -34,11 +33,6 @@ internal fun RaceList(
             textAlign = TextAlign.Start,
             modifier = Modifier
                 .padding(16.dp)
-        )
-
-        HorizontalDivider(
-            modifier = Modifier
-                .padding(vertical = 16.dp)
         )
 
         RaceList(races = raceState.races, modifier)
@@ -72,13 +66,13 @@ internal fun Race(
         Column(modifier = Modifier.padding(8.dp)) {
             Text(
                 text = race.title ?: "",
-                style = F1Theme.typography.headlineMedium,
+                style = F1Theme.typography.title1,
                 maxLines = 1
             )
             Spacer(modifier = Modifier.size(4.dp))
             Text(
                 text = race.description ?: "",
-                style = F1Theme.typography.bodyMedium,
+                style = F1Theme.typography.customBody1,
                 maxLines = 3
             )
         }
