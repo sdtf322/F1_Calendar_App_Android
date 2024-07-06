@@ -1,5 +1,6 @@
 package com.opliska.f1calendarapplication.presentation.race_list.component
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -7,6 +8,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -15,12 +17,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.key
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.opliska.f1calendarapplication.R
 import com.opliska.f1calendarapplication.State
 import com.opliska.f1calendarapplication.presentation.RaceUI
 import com.opliska.f1calendarapplication.ui.theme.F1Theme
@@ -81,11 +86,20 @@ internal fun Race(
                 maxLines = 1
             )
             Spacer(modifier = Modifier.padding(top = 6.dp))
-            Text(
-                text = race.description ?: "",
-                style = F1Theme.typography.customBody1,
-                maxLines = 3
-            )
+            Row {
+                Text(
+                    modifier = Modifier.padding(top = 4.dp),
+                    text = race.description ?: "",
+                    style = F1Theme.typography.customBody1,
+                    maxLines = 3
+                )
+                Spacer(modifier = Modifier.width(8.dp))
+                Image(
+                    modifier = Modifier.size(24.dp),
+                    imageVector = ImageVector.vectorResource(id = R.drawable.china_flag),
+                    contentDescription = "Race's country flag image"
+                )
+            }
         }
     }
 }
