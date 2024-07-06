@@ -118,10 +118,10 @@ internal fun Race.toRaceUI(): RaceUI {
     return RaceUI(
         id = round,
         title = raceName,
-        description = date
+        description = date,
+        imageUrl = circuit?.location?.country
     )
 }
-
 
 //Race data class to DBO logic
 

@@ -17,17 +17,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.key
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.opliska.f1calendarapplication.R
 import com.opliska.f1calendarapplication.State
 import com.opliska.f1calendarapplication.presentation.RaceUI
+import com.opliska.f1calendarapplication.presentation.getFlagImageByCountry
 import com.opliska.f1calendarapplication.ui.theme.F1Theme
 
 @Composable
@@ -96,7 +94,7 @@ internal fun Race(
                 Spacer(modifier = Modifier.width(8.dp))
                 Image(
                     modifier = Modifier.size(24.dp),
-                    imageVector = ImageVector.vectorResource(id = R.drawable.china_flag),
+                    imageVector = getFlagImageByCountry(country = race.imageUrl ?: ""),
                     contentDescription = "Race's country flag image"
                 )
             }
