@@ -55,7 +55,18 @@ class RaceRepository @Inject constructor(
         val apiRequest = callbackFlow {
             val racesListener = object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
-                    val racesList = snapshot.children.mapNotNull { it.getValue(Race::class.java) }
+                    val racesList = snapshot.children.mapNotNull { dataSnapshot ->
+                        val race = dataSnapshot.getValue(Race::class.java)
+                        if (race == null) {
+                            logger.d(LOG_TAG, "Failed to deserialize Race: ${dataSnapshot.value}")
+                        } else {
+                            if (race.circuit == null) {
+                                logger.d(LOG_TAG, "Race with null Circuit: $race")
+                            }
+                        }
+                        race
+                    }
+
                     trySend(Result.success(racesList)).isSuccess
                 }
 
@@ -87,6 +98,7 @@ class RaceRepository @Inject constructor(
         val start = flowOf<RequestResult<List<Race>>>(RequestResult.InProgress())
         return merge(apiRequest, start)
     }
+
 
     private suspend fun saveRacesToCache(data: List<Race>) {
         val dbos = data.map { race -> race.toRaceDBO() }
