@@ -2,6 +2,11 @@ package com.opliska.f1calendarapplication.data.model
 
 import com.google.firebase.database.PropertyName
 
+//TODO fix: Sketchy thing that almost all classes now have data, cause I implemented @PropertyName annotation,
+//          But still FirstPractice and Circuit somehow is always null when in Firebase there is data.
+//          Should check mapping/sending data in all places and compare it to working classes like
+//          Qualifying.
+
 data class Race(
     val cacheId: Long = ID_NONE,
     @PropertyName("Сircuit") val circuit: Circuit? = null,
