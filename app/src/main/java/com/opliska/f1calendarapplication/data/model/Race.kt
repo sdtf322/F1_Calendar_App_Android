@@ -6,7 +6,6 @@ import com.google.firebase.database.PropertyName
 //          But still FirstPractice and Circuit somehow is always null when in Firebase there is data.
 //          Should check mapping/sending data in all places and compare it to working classes like
 //          Qualifying.
-//asdasd
 
 data class Race(
     val cacheId: Long = ID_NONE,
