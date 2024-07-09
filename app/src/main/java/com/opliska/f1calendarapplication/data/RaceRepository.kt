@@ -57,13 +57,6 @@ class RaceRepository @Inject constructor(
                 override fun onDataChange(snapshot: DataSnapshot) {
                     val racesList = snapshot.children.mapNotNull { dataSnapshot ->
                         val race = dataSnapshot.getValue(Race::class.java)
-                        if (race == null) {
-                            logger.d(LOG_TAG, "Failed to deserialize Race: ${dataSnapshot.value}")
-                        } else {
-                            if (race.circuit == null) {
-                                logger.d(LOG_TAG, "Race with null Circuit: $race")
-                            }
-                        }
                         race
                     }
 
