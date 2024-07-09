@@ -11,7 +11,7 @@ import com.google.firebase.database.PropertyName
 data class Race(
     val cacheId: Long = ID_NONE,
     @PropertyName("Сircuit") val circuit: Circuit? = null,
-    val firstPractice: FirstPractice? = null,
+    @PropertyName("FirstPractice") val firstPractice: FirstPractice? = null,
     @PropertyName("LapRecord") val lapRecord: LapRecord? = null,
     @PropertyName("Qualifying") val qualifying: Qualifying? = null,
     @PropertyName("SecondPractice") val secondPractice: SecondPractice? = null,
