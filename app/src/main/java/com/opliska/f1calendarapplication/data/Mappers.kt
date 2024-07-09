@@ -2,23 +2,15 @@ package com.opliska.f1calendarapplication.data
 
 import com.opliska.f1calendarapplication.State
 import com.opliska.f1calendarapplication.data.database.model.CircuitDBO
-import com.opliska.f1calendarapplication.data.database.model.FirstPracticeDBO
 import com.opliska.f1calendarapplication.data.database.model.LapRecordDBO
 import com.opliska.f1calendarapplication.data.database.model.LocationDBO
-import com.opliska.f1calendarapplication.data.database.model.QualifyingDBO
 import com.opliska.f1calendarapplication.data.database.model.RaceDBO
-import com.opliska.f1calendarapplication.data.database.model.SecondPracticeDBO
-import com.opliska.f1calendarapplication.data.database.model.SprintDBO
-import com.opliska.f1calendarapplication.data.database.model.ThirdPracticeDBO
+import com.opliska.f1calendarapplication.data.database.model.RaceSessionDBO
 import com.opliska.f1calendarapplication.data.model.Circuit
-import com.opliska.f1calendarapplication.data.model.FirstPractice
+import com.opliska.f1calendarapplication.data.model.RaceSession
 import com.opliska.f1calendarapplication.data.model.LapRecord
 import com.opliska.f1calendarapplication.data.model.Location
-import com.opliska.f1calendarapplication.data.model.Qualifying
 import com.opliska.f1calendarapplication.data.model.Race
-import com.opliska.f1calendarapplication.data.model.SecondPractice
-import com.opliska.f1calendarapplication.data.model.Sprint
-import com.opliska.f1calendarapplication.data.model.ThirdPractice
 import com.opliska.f1calendarapplication.presentation.RaceUI
 import kotlinx.collections.immutable.toImmutableList
 
@@ -36,11 +28,11 @@ fun RaceDBO.toRace(): Race {
     return Race(
         cacheId = this.id,
         circuit = this.circuit?.toCircuit(),
-        firstPractice = this.firstPractice?.toFirstPractice(),
-        secondPractice = this.secondPractice?.toSecondPractice(),
-        thirdPractice = this.thirdPractice?.toThirdPractice(),
-        qualifying = this.qualifying?.toQualifying(),
-        sprint = this.sprint?.toSprint(),
+        firstPractice = this.firstPractice?.toRaceSession(),
+        secondPractice = this.secondPractice?.toRaceSession(),
+        thirdPractice = this.thirdPractice?.toRaceSession(),
+        qualifying = this.qualifying?.toRaceSession(),
+        sprint = this.sprint?.toRaceSession(),
         lapRecord = this.lapRecord?.toLapRecord(),
         date = this.date,
         raceName = this.raceName,
@@ -79,36 +71,8 @@ fun LapRecordDBO.toLapRecord(): LapRecord {
     )
 }
 
-fun FirstPracticeDBO.toFirstPractice(): FirstPractice {
-    return FirstPractice(
-        date = this.date,
-        time = this.time
-    )
-}
-
-fun SecondPracticeDBO.toSecondPractice(): SecondPractice {
-    return SecondPractice(
-        date = this.date,
-        time = this.time
-    )
-}
-
-fun ThirdPracticeDBO.toThirdPractice(): ThirdPractice {
-    return ThirdPractice(
-        date = date,
-        time = time
-    )
-}
-
-fun QualifyingDBO.toQualifying(): Qualifying {
-    return Qualifying(
-        date = this.date,
-        time = this.time
-    )
-}
-
-fun SprintDBO.toSprint(): Sprint {
-    return Sprint(
+fun RaceSessionDBO.toRaceSession(): RaceSession {
+    return RaceSession(
         date = this.date,
         time = this.time
     )
@@ -128,11 +92,11 @@ internal fun Race.toRaceUI(): RaceUI {
 fun Race.toRaceDBO(): RaceDBO {
     return RaceDBO(
         circuit = this.circuit?.toCircuitDBO(),
-        firstPractice = this.firstPractice?.toFirstPracticeDBO(),
-        secondPractice = this.secondPractice?.toSecondPracticeDBO(),
-        thirdPractice = this.thirdPractice?.toThirdPracticeDBO(),
-        qualifying = this.qualifying?.toQualifyingDBO(),
-        sprint = this.sprint?.toSprintDBO(),
+        firstPractice = this.firstPractice?.toRaceSessionDBO(),
+        secondPractice = this.secondPractice?.toRaceSessionDBO(),
+        thirdPractice = this.thirdPractice?.toRaceSessionDBO(),
+        qualifying = this.qualifying?.toRaceSessionDBO(),
+        sprint = this.sprint?.toRaceSessionDBO(),
         lapRecord = this.lapRecord?.toLapRecordDBO(),
         date = this.date,
         raceName = this.raceName,
@@ -172,36 +136,8 @@ fun LapRecord.toLapRecordDBO(): LapRecordDBO {
     )
 }
 
-fun FirstPractice.toFirstPracticeDBO(): FirstPracticeDBO {
-    return FirstPracticeDBO(
-        date = this.date,
-        time = this.time
-    )
-}
-
-fun SecondPractice.toSecondPracticeDBO(): SecondPracticeDBO {
-    return SecondPracticeDBO(
-        date = this.date,
-        time = this.time
-    )
-}
-
-fun ThirdPractice.toThirdPracticeDBO(): ThirdPracticeDBO {
-    return ThirdPracticeDBO(
-        date = this.date,
-        time = this.time
-    )
-}
-
-fun Qualifying.toQualifyingDBO(): QualifyingDBO {
-    return QualifyingDBO(
-        date = this.date,
-        time = this.time
-    )
-}
-
-fun Sprint.toSprintDBO(): SprintDBO {
-    return SprintDBO(
+fun RaceSession.toRaceSessionDBO(): RaceSessionDBO {
+    return RaceSessionDBO(
         date = this.date,
         time = this.time
     )

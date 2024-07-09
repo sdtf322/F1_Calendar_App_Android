@@ -8,11 +8,11 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "races")
 data class RaceDBO(
     @Embedded(prefix = "circuit") val circuit: CircuitDBO?,
-    @Embedded(prefix = "first_practice") val firstPractice: FirstPracticeDBO?,
-    @Embedded(prefix = "second_practice") val secondPractice: SecondPracticeDBO?,
-    @Embedded(prefix = "third_practice") val thirdPractice: ThirdPracticeDBO?,
-    @Embedded(prefix = "qualifying") val qualifying: QualifyingDBO?,
-    @Embedded(prefix = "sprint") val sprint: SprintDBO?,
+    @Embedded(prefix = "first_practice") val firstPractice: RaceSessionDBO?,
+    @Embedded(prefix = "second_practice") val secondPractice: RaceSessionDBO?,
+    @Embedded(prefix = "third_practice") val thirdPractice: RaceSessionDBO?,
+    @Embedded(prefix = "qualifying") val qualifying: RaceSessionDBO?,
+    @Embedded(prefix = "sprint") val sprint: RaceSessionDBO?,
     @Embedded(prefix = "lap_record") val lapRecord: LapRecordDBO?,
     @ColumnInfo("date") val date: String?,
     @ColumnInfo("race_name") val raceName: String?,
@@ -45,27 +45,7 @@ data class LapRecordDBO(
     val year: String? = null
 )
 
-data class FirstPracticeDBO(
-    val date: String? = null,
-    val time: String? = null
-)
-
-data class SecondPracticeDBO(
-    val date: String? = null,
-    val time: String? = null
-)
-
-data class ThirdPracticeDBO(
-    val date: String? = null,
-    val time: String? = null
-)
-
-data class QualifyingDBO(
-    val date: String? = null,
-    val time: String? = null
-)
-
-data class SprintDBO(
+data class RaceSessionDBO(
     val date: String? = null,
     val time: String? = null
 )
