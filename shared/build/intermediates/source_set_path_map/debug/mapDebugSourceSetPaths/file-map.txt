@@ -1,0 +1,16 @@
+com.opliska.shared-profileinstaller-1.3.1-0 /Users/olegspliska/.gradle/caches/transforms-4/08999f083ade9530eb2c364a2d95a07b/transformed/profileinstaller-1.3.1/res
+com.opliska.shared-core-ktx-1.13.1-1 /Users/olegspliska/.gradle/caches/transforms-4/343527ef360eaca1a780fd5acddf6e24/transformed/core-ktx-1.13.1/res
+com.opliska.shared-lifecycle-runtime-ktx-release-2 /Users/olegspliska/.gradle/caches/transforms-4/3cd8947a540b46ca1a743db0b0081737/transformed/lifecycle-runtime-ktx-release/res
+com.opliska.shared-core-runtime-2.2.0-3 /Users/olegspliska/.gradle/caches/transforms-4/5277e28e0db9ba195c907b0300657148/transformed/core-runtime-2.2.0/res
+com.opliska.shared-lifecycle-runtime-release-4 /Users/olegspliska/.gradle/caches/transforms-4/9d57f42ea8236db6b9a19f01bfbd5e69/transformed/lifecycle-runtime-release/res
+com.opliska.shared-annotation-experimental-1.4.0-5 /Users/olegspliska/.gradle/caches/transforms-4/bea041f2f230a978378c04b01ed16f61/transformed/annotation-experimental-1.4.0/res
+com.opliska.shared-startup-runtime-1.1.1-6 /Users/olegspliska/.gradle/caches/transforms-4/cd210da88ae31a12c32872926bc91e21/transformed/startup-runtime-1.1.1/res
+com.opliska.shared-core-1.13.1-7 /Users/olegspliska/.gradle/caches/transforms-4/eb59cb0807e8d589f7878909dc88675f/transformed/core-1.13.1/res
+com.opliska.shared-pngs-8 /Users/olegspliska/AndroidStudioProjects/F1_Calendar_App_Android/shared/build/generated/res/pngs/debug
+com.opliska.shared-resValues-9 /Users/olegspliska/AndroidStudioProjects/F1_Calendar_App_Android/shared/build/generated/res/resValues/debug
+com.opliska.shared-packageDebugResources-10 /Users/olegspliska/AndroidStudioProjects/F1_Calendar_App_Android/shared/build/intermediates/incremental/debug/packageDebugResources/merged.dir
+com.opliska.shared-packageDebugResources-11 /Users/olegspliska/AndroidStudioProjects/F1_Calendar_App_Android/shared/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
+com.opliska.shared-debug-12 /Users/olegspliska/AndroidStudioProjects/F1_Calendar_App_Android/shared/build/intermediates/merged_res/debug/mergeDebugResources
+com.opliska.shared-androidMain-13 /Users/olegspliska/AndroidStudioProjects/F1_Calendar_App_Android/shared/src/androidMain/res
+com.opliska.shared-debug-14 /Users/olegspliska/AndroidStudioProjects/F1_Calendar_App_Android/shared/src/debug/res
+com.opliska.shared-main-15 /Users/olegspliska/AndroidStudioProjects/F1_Calendar_App_Android/shared/src/main/res

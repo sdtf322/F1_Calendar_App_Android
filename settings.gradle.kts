@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "F1 Calendar Application"
 include(":androidApp")
- 
+include(":shared")
