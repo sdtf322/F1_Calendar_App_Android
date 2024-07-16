@@ -20,5 +20,5 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "F1 Calendar Application"
-include(":app")
+include(":androidApp")
  
