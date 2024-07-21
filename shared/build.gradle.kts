@@ -1,8 +1,8 @@
 plugins {
     alias(libs.plugins.multiplatform)
+    alias(libs.plugins.android.library)
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.compose)
-    alias(libs.plugins.android.application)
     alias(libs.plugins.kotlinx.serialization)
 }
 
@@ -41,8 +41,27 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                // Put your multiplatform dependencies here
                 implementation(libs.kotlinx.immutable)
+
+                api(libs.koin.core)
+                api(libs.koin.compose)
+
+                implementation(compose.material3)
+                implementation(compose.material)
+                implementation(compose.materialIconsExtended)
+
+                implementation(libs.material3.window.size.multiplatform)
+
+                implementation(libs.voyager.navigator)
+                implementation(libs.voyager.bottomSheetNavigator)
+                implementation(libs.voyager.transitions)
+                implementation(libs.voyager.tabNavigator)
+                implementation(libs.voyager.koin)
+
+                implementation(libs.stately.common)
+
+                api(libs.multiplatformSettings.noArg)
+                api(libs.multiplatformSettings.coroutines)
             }
         }
         val commonTest by getting {
@@ -58,7 +77,6 @@ kotlin {
         }
         val androidUnitTest by getting {
             dependencies {
-//                implementation(kotlin("test"))
                 implementation(libs.junit)
             }
         }

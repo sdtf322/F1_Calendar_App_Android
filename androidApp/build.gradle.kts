@@ -13,6 +13,7 @@ plugins {
 
 android {
     namespace = "com.opliska.f1calendarapplication"
+    sourceSets["main"].manifest.srcFile("src/main/AndroidManifest.xml")
     compileSdk = 34
 
     defaultConfig {
@@ -85,8 +86,11 @@ dependencies {
     implementation(libs.firebase.database)
 
     implementation(libs.hilt.navigation.compose)
+    implementation(project(":shared"))
 
     kapt(libs.dagger.hilt.compiler)
+
+    implementation(libs.koin.android)
 
     ksp(libs.androidx.room.compiler)
 
