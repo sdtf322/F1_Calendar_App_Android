@@ -13,7 +13,7 @@ import androidx.compose.ui.Modifier
 fun RaceListScreen() {
     Surface(
         modifier = Modifier.fillMaxSize(),
-        color = MaterialTheme.colors.primary
+        color = MaterialTheme.colors.background
     ) {
         Box(
             modifier = Modifier.fillMaxSize(),

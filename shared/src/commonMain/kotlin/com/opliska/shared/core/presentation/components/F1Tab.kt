@@ -13,7 +13,7 @@ internal sealed class F1Tab {
         override val options: TabOptions
             @Composable
             get() {
-                val title = "Race List"
+                val title = "Races"
                 val icon = null
 
                 return remember {
@@ -35,7 +35,7 @@ internal sealed class F1Tab {
         override val options: TabOptions
             @Composable
             get() {
-                val title = "Driver List"
+                val title = "Drivers"
                 val icon = null
 
                 return remember {
@@ -57,7 +57,7 @@ internal sealed class F1Tab {
         override val options: TabOptions
             @Composable
             get() {
-                val title = "Constructor list"
+                val title = "Constructors"
                 val icon = null
 
                 return remember {
